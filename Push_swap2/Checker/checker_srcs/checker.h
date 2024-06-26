@@ -31,12 +31,12 @@ typedef struct s_stack
 }					t_stack;
 
 // Moviments moviments.c && moviments2.c
-void	ft_swap(t_stack **head, char id);
+void	ft_swap(t_stack **head);
 void	ft_swap_swap(t_stack **stack_a, t_stack **stack_b);
-void	ft_pass_to(t_stack **src, t_stack **dest, char id);
-void	ft_rotate(t_stack **stack, char id);
+void	ft_pass_to(t_stack **src, t_stack **dest);
+void	ft_rotate(t_stack **stack);
 void	ft_rotate_rotate(t_stack **stack_a, t_stack **stack_b);
-void	ft_reverse_rotate(t_stack **stack, char id);
+void	ft_reverse_rotate(t_stack **stack);
 void	ft_reverse_rotate_rotate(t_stack **stack_a, t_stack **stack_b);
 
 //ERROR CHECKS error_managemant.c

@@ -94,8 +94,8 @@ int	store_cut3(char *vals, char *commands, int skip, t_stack *stack)
  */
 int	store_cut2(t_stack **stack, char **vals, char *commands, int i)
 {
-	int	skip;
-	int	parsed_val;
+	int		skip;
+	long	parsed_val;
 
 	commands_check_aux2(vals, i);
 	skip = store_cut3(vals[i], commands, 2, *stack);

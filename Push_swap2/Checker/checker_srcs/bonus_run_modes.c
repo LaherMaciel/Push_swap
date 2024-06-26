@@ -15,9 +15,10 @@
 //check if the order of the list is ok
 void	end_code(t_stack **stack_a, t_stack **stack_b, char *commands)
 {
-	if (commands != NULL && (check_order_ok(*stack_a) == 1) && *stack_b == NULL)
+	free(commands);
+	if ((check_order_ok(*stack_a) == 1) && *stack_b == NULL)
 		ft_printf("\nOK\n");
-	else if (commands != NULL)
+	else
 		ft_printf("\nKO\n");
 }
 
@@ -38,7 +39,7 @@ int	user_sort(t_stack **stack_a, t_stack **stack_b, char *command)
 	sorting(stack_a, stack_b, command);
 	if (commands_check(command) == 0 && ft_strncmp(command, "exit", 4) != 0)
 	{
-		ft_printf("Error\n");
+		ft_fdprintf(2, "Error\n");
 		return (0);
 	}
 	if (ft_strncmp(command, "exit", 4) == 0)
@@ -55,7 +56,7 @@ char	**the_split(char *commands)
 	comma = check_commands(commands);
 	if (comma == NULL)
 	{
-		ft_printf("Error\n");
+		ft_fdprintf(2, "Error\n");
 		return (NULL);
 	}
 	free(comma);

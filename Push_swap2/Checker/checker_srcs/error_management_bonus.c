@@ -92,7 +92,7 @@ char	*error_check_bonus(int argc, t_stack *stack, char *comma)
 	if (argc != 0 && (stack == NULL || (contains_duplicate_values(stack) == 0)
 			|| (ft_lstsize_rem(stack) == 1 && comma != NULL)))
 	{
-		ft_printf("Error\n");
+		ft_fdprintf(2, "Error\n");
 		free(comma);
 		return (NULL);
 	}
@@ -106,7 +106,7 @@ char	*error_check_bonus(int argc, t_stack *stack, char *comma)
 		free(comma);
 		if (commands == NULL)
 		{
-			ft_printf("Error\n");
+			ft_fdprintf(2, "Error\n");
 			return (NULL);
 		}
 	}
