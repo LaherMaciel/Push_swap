@@ -19,7 +19,6 @@ void	end_code(t_stack **stack_a, t_stack **stack_b, char *commands)
 		ft_printf("\nOK\n");
 	else if (commands != NULL)
 		ft_printf("\nKO\n");
-	free(commands);
 }
 
 //	Verify if the command is ok. If its ok it 
@@ -39,7 +38,7 @@ int	user_sort(t_stack **stack_a, t_stack **stack_b, char *command)
 	sorting(stack_a, stack_b, command);
 	if (commands_check(command) == 0 && ft_strncmp(command, "exit", 4) != 0)
 	{
-		ft_fdprintf(2, "Error\n");
+		ft_printf("Error\n");
 		return (0);
 	}
 	if (ft_strncmp(command, "exit", 4) == 0)
@@ -56,7 +55,7 @@ char	**the_split(char *commands)
 	comma = check_commands(commands);
 	if (comma == NULL)
 	{
-		ft_fdprintf(2, "Error\n");
+		ft_printf("Error\n");
 		return (NULL);
 	}
 	free(comma);
